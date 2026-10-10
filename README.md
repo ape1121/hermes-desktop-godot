@@ -28,6 +28,12 @@ so flip it on in **Settings → Plugins** if it lands disabled.
 
 Either way, nothing else is required: no Godot binary path, no config key, no enable flag.
 
+**Updating** a clone-based install is a pull — the app hot-reloads the file:
+
+```bash
+git -C ~/.hermes/desktop-plugins/godot-launcher pull
+```
+
 ## Requirements
 
 - The Hermes desktop app (the CLI/gateway alone does not load desktop plugins).
