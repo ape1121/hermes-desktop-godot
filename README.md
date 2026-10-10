@@ -7,7 +7,7 @@ One file, no build step, no configuration. It adds a `godot` pane, a `godot` sta
 three ⌘K rows — and none of them appear unless the chat you are in is actually a Godot project.
 
 ```
-~/.hermes/desktop-plugins/godot-launcher/plugin.js
+~/.hermes/desktop-plugins/hermes-desktop-godot/plugin.js
 ```
 
 ## Install
@@ -15,10 +15,10 @@ three ⌘K rows — and none of them appear unless the chat you are in is actual
 **Manually (any OS)** — the app loads plugins from disk, no restart needed:
 
 ```bash
-git clone https://github.com/ape1121/hermes-desktop-godot ~/.hermes/desktop-plugins/godot-launcher
+git clone https://github.com/ape1121/hermes-desktop-godot ~/.hermes/desktop-plugins/hermes-desktop-godot
 ```
 
-With a named Hermes profile, use `~/.hermes/profiles/<profile>/desktop-plugins/godot-launcher`.
+With a named Hermes profile, use `~/.hermes/profiles/<profile>/desktop-plugins/hermes-desktop-godot`.
 Already have the folder? Just drop `plugin.js` in it — the app picks up the file within a few seconds
 and hot-reloads on every later save.
 
@@ -31,7 +31,7 @@ Either way, nothing else is required: no Godot binary path, no config key, no en
 **Updating** a clone-based install is a pull — the app hot-reloads the file:
 
 ```bash
-git -C ~/.hermes/desktop-plugins/godot-launcher pull
+git -C ~/.hermes/desktop-plugins/hermes-desktop-godot pull
 ```
 
 ## Requirements
@@ -94,7 +94,7 @@ chrome at once, and a chat with no workspace of its own reads as "not Godot".
 
 Directory listings, each `project.godot`'s `config/name` line, `git worktree list` for the workspace
 repo, the app's `projects.tree` RPC, and its own saved-project list in plugin storage
-(`hermes.plugin.godot-launcher.*`). It writes nothing outside that storage.
+(`hermes.plugin.hermes-desktop-godot.*`). It writes nothing outside that storage.
 
 ## Development
 
@@ -116,7 +116,7 @@ print(desktop_surface_findings(Path('plugin.js').read_text()))"
 Then load it through the app's real loader (the strongest pre-ship check — it runs the actual import
 rewrite, blob evaluation and `register(ctx)`): add a temporary test under
 `~/.hermes/hermes-agent/apps/desktop/src/contrib/` that reads this file and calls
-`loadRuntimePlugin(source, 'godot-launcher')` with the blob→`data:` URL reroute the other loader tests
+`loadRuntimePlugin(source, 'hermes-desktop-godot')` with the blob→`data:` URL reroute the other loader tests
 use, run `npx vitest run --project ui <that file>`, then delete it.
 
 A load failure shows up in `~/.hermes/logs/desktop.log` as `[plugins] runtime load failed`. Note the

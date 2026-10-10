@@ -1,5 +1,5 @@
 /**
- * godot-launcher — one-click "open this Godot project in the Godot editor"
+ * hermes-desktop-godot — one-click "open this Godot project in the Godot editor"
  * for the Hermes desktop app.
  *
  * What it adds
@@ -58,7 +58,7 @@ import {
 } from '@hermes/plugin-sdk'
 import { jsx, jsxs } from 'react/jsx-runtime'
 
-const ID = 'godot-launcher'
+const ID = 'hermes-desktop-godot'
 const PROJECT_FILE = 'project.godot'
 const CACHE_DIR = '.godot'
 const SAVED_KEY = 'savedProjects'
